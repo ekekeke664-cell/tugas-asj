@@ -1,60 +1,325 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-    <title>Website Profil Diri</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CYBER TECH | My Portfolio</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #070817;
+    color: white;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    width: 350px;
+    height: 350px;
+    background: #5b21b6;
+    filter: blur(150px);
+    top: 10%;
+    left: -100px;
+    z-index: -1;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    width: 350px;
+    height: 350px;
+    background: #006eff;
+    filter: blur(150px);
+    bottom: 0;
+    right: -100px;
+    z-index: -1;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 8%;
+    background: rgba(7,8,23,0.8);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    backdrop-filter: blur(15px);
+}
+
+.logo {
+    color: #00eaff;
+    font-size: 23px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 18px;
+    font-size: 13px;
+}
+
+nav a:hover {
+    color: #00eaff;
+}
+
+.hero {
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.tag {
+    color: #00eaff;
+    border: 1px solid #00eaff;
+    padding: 9px 20px;
+    border-radius: 30px;
+    margin-bottom: 25px;
+    box-shadow: 0 0 15px #00eaff55;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 9vw, 75px);
+    margin-bottom: 15px;
+    text-shadow: 0 0 20px #7c3aed;
+}
+
+.hero h1 span {
+    color: #00eaff;
+}
+
+.hero p {
+    color: #b9c4dc;
+    max-width: 550px;
+    line-height: 1.8;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 14px 30px;
+    background: linear-gradient(90deg,#00c8ff,#8b5cf6);
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 0 25px #00c8ff66;
+    transition: .3s;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 35px #00eaff;
+}
+
+section {
+    padding: 75px 8%;
+}
+
+.judul {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.judul span {
+    color: #00eaff;
+}
+
+.about {
+    max-width: 850px;
+    margin: auto;
+    padding: 35px;
+    text-align: center;
+    line-height: 1.9;
+    color: #c4cce0;
+    background: rgba(255,255,255,.06);
+    border: 1px solid #ffffff20;
+    border-radius: 20px;
+    box-shadow: 0 0 30px #5b21b622;
+}
+
+.skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(140px,1fr));
+    gap: 20px;
+}
+
+.skill {
+    background: rgba(255,255,255,.06);
+    border: 1px solid #00eaff44;
+    border-radius: 15px;
+    padding: 28px 15px;
+    text-align: center;
+    font-size: 16px;
+    transition: .3s;
+}
+
+.skill:hover {
+    transform: translateY(-8px);
+    background: #14264b;
+    box-shadow: 0 0 25px #00eaff55;
+}
+
+.skill b {
+    display: block;
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.contact {
+    text-align: center;
+    background: rgba(255,255,255,.05);
+    border: 1px solid #ffffff20;
+    padding: 40px 20px;
+    border-radius: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #8994b0;
+    border-top: 1px solid #ffffff15;
+    font-size: 13px;
+}
+
+@media(max-width:600px) {
+    nav {
+        padding: 18px 5%;
+    }
+
+    nav a {
+        margin-left: 9px;
+        font-size: 11px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    section {
+        padding: 60px 6%;
+    }
+
+    .about {
+        padding: 25px 18px;
+    }
+}
+</style>
 </head>
-<body style="background-color: lightblue;">
 
-    <center>
-        <h1>SELAMAT DATANG!</h1>
-        <h2>Website Profil Diri</h2>
+<body>
 
-        <hr>
+<nav>
+    <div class="logo">CYBER<span>TECH.</span></div>
+    <div>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
 
-        <img src="https://placehold.co/150x150"
-             width="150" height="150">
+<div class="hero" id="home">
+    <div class="tag">⚡ WELCOME TO MY WEBSITE</div>
 
-        <h2>Halo, Saya Pelajar!</h2>
+    <h1>HELLO, I'M <span>STUDENT</span></h1>
+
+    <p>
+        Selamat datang di dunia digital saya.
+        Saya adalah pelajar Teknik Komputer dan Jaringan
+        yang tertarik dengan teknologi, komputer,
+        jaringan, dan dunia programming.
+    </p>
+
+    <a href="#about" class="btn">EXPLORE MY WEBSITE ↗</a>
+</div>
+
+<section id="about">
+    <h2 class="judul">ABOUT <span>ME</span></h2>
+
+    <div class="about">
+        <h2 style="color:#00eaff;margin-bottom:15px;">
+            WHO AM I?
+        </h2>
 
         <p>
-            Selamat datang di website pribadi saya.
-            Website ini dibuat untuk tugas sekolah.
+            Halo! Nama saya <b>Pandu Putra Gumilang</b>.
+            Saya seorang pelajar jurusan Teknik Komputer
+            dan Jaringan (TKJ). Saya senang mempelajari
+            teknologi, jaringan komputer, dan membuat
+            sesuatu yang kreatif menggunakan teknologi.
         </p>
+    </div>
+</section>
 
-        <hr>
+<section id="skills">
+    <h2 class="judul">MY <span>SKILLS</span></h2>
 
-        <h3>Data Diri</h3>
+    <div class="skills">
+        <div class="skill">
+            <b>💻</b>
+            HTML
+        </div>
 
-        <p>Nama: Pandu Putra Gumilang</p>
-        <p>Sekolah: SMK KARYA GUNA 2 BEKASI</p>
-        <p>Jurusan: Teknik Komputer dan Jaringan</p>
-        <p>Hobi: Bermain futsal</p>
+        <div class="skill">
+            <b>🌐</b>
+            Networking
+        </div>
 
-        <hr>
+        <div class="skill">
+            <b>⚙️</b>
+            MikroTik
+        </div>
 
-        <h3>Tentang Saya</h3>
+        <div class="skill">
+            <b>🖥️</b>
+            Computer
+        </div>
 
-        <p>
-            Saya adalah seorang pelajar yang tertarik
-            dengan dunia teknologi dan komputer.
-            Saya ingin terus belajar dan mengembangkan
-            kemampuan di bidang teknologi.
+        <div class="skill">
+            <b>🎨</b>
+            Web Design
+        </div>
+
+        <div class="skill">
+            <b>🚀</b>
+            Technology
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2 class="judul">CONTACT <span>ME</span></h2>
+
+    <div class="contact">
+        <h2>LET'S CONNECT!</h2>
+        <p style="color:#b9c4dc;margin-top:15px;">
+            Terima kasih sudah mengunjungi website saya.
+            Sampai bertemu di dunia digital!
         </p>
-
-        <hr>
-
-        <h3>Media Sosial</h3>
-
-        <a href="https://www.instagram.com/pndptrgmlg__?xtok=MTc4NDUwdnR0NXp2aQ==">
-            Instagram Saya
         </a>
+    </div>
+</section>
 
-        <br><br>
-
-        <footer>
-            <p>© 2026 Website Profil Diri</p>
-        </footer>
-    </center>
+<footer>
+    © 2026 CYBER TECH | Created by PANDU
+</footer>
 
 </body>
 </html>
